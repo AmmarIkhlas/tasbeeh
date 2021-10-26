@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tasbhee counter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+
+        }
+
+        .tasbeeh {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 339px;
+            width: 247px;
+            border: 1px solid #e72c07;
+            border-radius: 50px;
+            padding: 7px;
+        }
+
+        #reset {
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            border: 1px solid red;
+            background: transparent;
+            align-self: flex-end;
+        }
+
+        #add {
+            width: 142px;
+            height: 142px;
+            border-radius: 50%;
+            outline: none;
+            border: 1px solid red;
+            background: transparent;
+        }
+
+        #deduct {
+            width: 30px;
+            height: 30px;
+            border-radius: 50px;
+            border: 1px solid red;
+            background: transparent;
+            align-self: flex-start;
+        }
+
+        #count {
+            text-align: right;
+            border: 1px solid red;
+            padding: 5px;
+            border-radius: 3px;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="tasbeeh">
+        <input id="count" value="0" type="number" />
+        <button id="reset">R</button>
+        <button id="add"></button>
+        <button id="deduct">-</button>
+    </div>
+
+
+    <script>
+        const count = document.getElementById("count")
+        const add = document.getElementById("add");
+        const deduct = document.getElementById("deduct");
+        const reset = document.getElementById("reset");
+
+        add.addEventListener("click",()=>{
+            // console.log(count.value)
+            count.value = parseInt(count.value)+1 
+        })
+       
+        deduct.addEventListener("click",()=>{
+            // console.log(count.value)
+            if(count.value !== "0"){
+                count.value = parseInt(count.value)-1
+            }
+        })
+        reset.addEventListener("click",()=>{
+            if(confirm("Are  you sure you want to reset?"))
+            {
+            // console.log(count.value)
+            count.value = 0
+        }
+        })
+
+        
+    </script>
+</body>
+
+</html>
